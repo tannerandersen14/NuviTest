@@ -5,7 +5,6 @@ let ActorList = React.createClass({
     console.log(this.props.data.actors);
     return (
       <div>
-        <h2>Actor List</h2>
         <div className="actor-container">
             {
                 this.props.data.actors.map(function(actor) {

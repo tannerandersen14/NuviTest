@@ -20,7 +20,6 @@ let Actors = React.createClass({
         return (
             <div className="actors">
               <h1 className="page-header">Actors</h1>
-              <p>This is the actors page</p>
               <ActorList data={this.state.data}/>
             </div>
         )
