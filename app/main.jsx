@@ -1,18 +1,23 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { Router, Route, browserHistory } from 'react-router';
+import { render } from 'react-dom';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
+// Imports the components from their respective locations to be used with react-router.
 import MainLayout from './components/MainLayout.jsx';
 import Home from './components/Home.jsx';
 import Actors from './components/Actors.jsx';
+import Actor from './components/Actor.jsx';
+import Provider from './components/Provider.jsx';
 import NoMatch from './components/NoMatch.jsx';
 
-ReactDOM.render((
-    <Router history={browserHistory}>
-      <Route component={MainLayout}>
-        <Route path='/' component={Home}/>
-        <Route path='/actors' component={Actors}/>
-      <Route path="*" component={NoMatch}/>
+// Defines the routes for react-router.
+render((
+    <Router history={ browserHistory } >
+      <Route path='/' component={ MainLayout } >
+        <IndexRoute component={ Home } />
+        <Route path='/actors' component={ Actors } />
+        <Route path='/provider(/:name)' component={ Provider } />
+        <Route path="*" component={ NoMatch }/>
       </Route>
     </Router>
 ), document.getElementById('root'));

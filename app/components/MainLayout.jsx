@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Router, Route, browserHistory } from 'react-router';
+import { Link, IndexLink, RouteHandler } from 'react-router';
 
 let MainLayout = React.createClass({
   render: function() {
@@ -8,7 +8,7 @@ let MainLayout = React.createClass({
         <header className="primary-header"></header>
         <nav className="navbar navbar-default">
           <ul className="nav navbar-nav">
-            <li><Link to="/" activeClassName="active">Home</Link></li>
+            <li><IndexLink to="/" activeClassName="active">Home</IndexLink></li>
             <li><Link to="/actors" activeClassName="active">Actors</Link></li>
           </ul>
         </nav>
