@@ -16,7 +16,7 @@ render((
       <Route path='/' component={ MainLayout } >
         <IndexRoute component={ Home } />
         <Route path='/actors' component={ Actors } />
-        <Route path='/provider(/:name)' component={ Provider } />
+        <Route path='/provider/:name' component={ Provider } />
         <Route path="*" component={ NoMatch }/>
       </Route>
     </Router>
