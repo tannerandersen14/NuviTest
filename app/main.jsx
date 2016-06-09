@@ -6,7 +6,6 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import MainLayout from './components/MainLayout.jsx';
 import Home from './components/Home.jsx';
 import Actors from './components/Actors.jsx';
-import Actor from './components/Actor.jsx';
 import Provider from './components/Provider.jsx';
 import NoMatch from './components/NoMatch.jsx';
 

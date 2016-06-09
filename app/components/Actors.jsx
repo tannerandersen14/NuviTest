@@ -30,6 +30,7 @@ let Actors = React.createClass({
                 this.state.data.providerArray[providerCount] = {}
                 this.state.data.providerArray[providerCount].name = obj;
                 this.state.data.providerArray[providerCount].data = providers[obj].data;
+                this.state.data.providerArray[providerCount].display = false;
                 providerCount += 1;
             }
             this.setState({data: {actors: response.data, providerArray: this.state.data.providerArray}});
