@@ -12,8 +12,10 @@ let MainLayout = React.createClass({
             <li><Link to="/actors" activeClassName="active">Actors</Link></li>
           </ul>
         </nav>
-        <main className="container">
-          {this.props.children}
+        <main className="container-background">
+          <div className="container-fluid container-inherit">
+            {this.props.children}
+          </div>
         </main>
       </div>
     );

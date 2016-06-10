@@ -17,12 +17,14 @@ let Actors = React.createClass({
             // For Loop to organize data into objects depending on who provided it.
             for ( var i = 0; i < response.data.length; i++) {
                 if (!providers[response.data[i].provider]) {
+                    response.data[i].display = false;
                     providers[response.data[i].provider] = {};
                     providers[response.data[i].provider].name = response.data[i].provider;
                     providers[response.data[i].provider].data = []
                     providers[response.data[i].provider].data.push(response.data[i]);
                 }
                 else if (providers[response.data[i].provider]) {
+                    response.data[i].display = false;                    
                     providers[response.data[i].provider].data.push(response.data[i]);
                 }
             }
@@ -50,8 +52,6 @@ let Actors = React.createClass({
             <div className="actors">
               <h1 className="page-header">Providers</h1>
               <Providers data={this.state.data} />
-              <h1 className="page-header">Actors</h1>
-              <ActorList data={this.state.data} />
             </div>
         )
     }

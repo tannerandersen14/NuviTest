@@ -1,15 +1,107 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.container-background {
+    background: #757F9A; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #757F9A , #D7DDE8); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #757F9A , #D7DDE8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    min-height: 100vh;
+    min-width: 800px;   
+}
+.container-inherit {
+    background: white;
+    min-height: 100vh;
+}
+
 .actor-container {
     width: 100%;
-    height: 80vh;
+    max-height: 80vh;
     padding: 15px;
     margin: auto;
     overflow-y: auto;
     margin-bottom: 20px;
+    cursor: pointer;
 }
-.actor-div {
+.actor-div {    
     text-align: center;
-    display: inline-block;
-    width: 22%;
+    width: 100%;
+    max-height: 300px;
+    margin: 10px; 
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 20px;
+}
+.actor-div:hover {
+    text-align: center;
+    width: 100%;
+    max-height: 300px;
+    margin: 10px; 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: antiquewhite;
+    border-radius: 20px;
+    cursor: pointer; 
+}
+.actor-div-extended {
+    text-align: center;
+    width: 100%;
     height: 300px;
     margin: 10px; 
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 20px;    
+}
+.actor-div-extended:hover {
+    text-align: center;
+    width: 100%;
+    height: 300px;
+    margin: 10px; 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: antiquewhite;    
+    border-radius: 20px;    
+    cursor: pointer; 
+}
+
+.provider-nav {
+    height: 65px;
+    width: 100%;
+    background-color: #fff;
+    margin-right: 15px;
+}
+.provider-nav-content {
+    background-color: #fff;
+    height: 100%;
+    padding-top: 2vh;
+    color: #00a5d9;
+}
+.provider-items {
+    display: inline-block;
+    color: #00a5d9;
+    margin: 20px;
+    font-size: 1.2em;
+}
+.provider-items:hover {
+    display: inline-block;
+    color: darkcyan;
+    margin: 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+.provider-items-active {
+    display: inline-block;
+    color: black;
+    margin: 20px;
+    font-size: 1.2em;
+}
+.provider-items-active:hover {
+    display: inline-block;
+    color: darkcyan;
+    margin: 20px;
+    font-size: 1.2em;
+    cursor: pointer;
 }
