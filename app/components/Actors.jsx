@@ -18,13 +18,17 @@ let Actors = React.createClass({
             for ( var i = 0; i < response.data.length; i++) {
                 if (!providers[response.data[i].provider]) {
                     response.data[i].display = false;
+                    response.data[i].comments = [];
+                    response.data[i].likes = 0;
                     providers[response.data[i].provider] = {};
                     providers[response.data[i].provider].name = response.data[i].provider;
                     providers[response.data[i].provider].data = []
                     providers[response.data[i].provider].data.push(response.data[i]);
                 }
                 else if (providers[response.data[i].provider]) {
-                    response.data[i].display = false;                    
+                    response.data[i].display = false;
+                    response.data[i].comments = [];
+                    response.data[i].likes = 0;                    
                     providers[response.data[i].provider].data.push(response.data[i]);
                 }
             }
@@ -50,7 +54,6 @@ let Actors = React.createClass({
     render:function() {
         return (
             <div className="actors">
-              <h1 className="page-header">Providers</h1>
               <Providers data={this.state.data} />
             </div>
         )
