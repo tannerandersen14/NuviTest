@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
 import axios from 'axios';
-import ActorList from './subComponents/ActorList.jsx';
 import Providers from './subComponents/Providers.jsx';
 
 
@@ -50,7 +49,7 @@ let Actors = React.createClass({
     componentDidMount: function() {
         this.getActors();
     },
-    // Renders the component and passes API data into subcomponent ActorList.
+    // Renders the component and passes API data into subcomponent Providers.
     render:function() {
         return (
             <div className="actors">
