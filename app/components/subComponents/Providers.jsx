@@ -94,23 +94,25 @@ let Providers = React.createClass({
                         // If user is moused over the activity, display comments and the form to create comment.
                         else if (providerObject.display && actor.display) {   
                           return (
-                            <div onMouseLeave={() => { this.switchActorDisplay(actor) }} style={{backgroundImage: 'url(' + actor.actor_avator + ')'}} className="actor-div-extended" key={actor.id}>
-                              <div className="actor-div-username">
-                                <h1>{actor.actor_username}</h1>
-                              </div>
-                              <div>
-                                <div className="actor-div-actor">
-                                  <h2>Actor</h2>
-                                  <h3><a href={actor.actor_url}>{actor.actor_name}</a></h3>
-                                  <h3>{actor.actor_description}</h3>                       
+                            <div onMouseLeave={() => { this.switchActorDisplay(actor) }} key={actor.id}>
+                              <div style={{backgroundImage: 'url(' + actor.actor_avator + ')'}} className="actor-div-extended" >
+                                <div className="actor-div-username">
+                                  <h1>{actor.actor_username}</h1>
                                 </div>
-                                <div className="actor-div-activities">
-                                  <h2>Activity</h2>
-                                  <h3><a href={actor.activity_url}>{actor.provider}</a></h3>
-                                  <h3>Date Posted: {actor.activity_date}</h3>
-                                  <h3>{actor.activity_comments} Comments</h3>
-                                  <h3>{actor.activity_likes} Likes</h3>
-                                  <h3>{actor.activity_shares} Shares</h3> 
+                                <div>
+                                  <div className="actor-div-actor">
+                                    <h2>Actor</h2>
+                                    <h3><a href={actor.actor_url}>{actor.actor_name}</a></h3>
+                                    <h3>{actor.actor_description}</h3>                       
+                                  </div>
+                                  <div className="actor-div-activities">
+                                    <h2>Activity</h2>
+                                    <h3><a href={actor.activity_url}>{actor.provider}</a></h3>
+                                    <h3>Date Posted: {actor.activity_date}</h3>
+                                    <h3>{actor.activity_comments} Comments</h3>
+                                    <h3>{actor.activity_likes} Likes</h3>
+                                    <h3>{actor.activity_shares} Shares</h3> 
+                                  </div>
                                 </div>
                               </div>
                               <div className="actor-div-comments">

@@ -59,6 +59,7 @@ html {
     position: relative;    
     text-align: center;
     width: 80%;
+    height: auto;
     min-height: 600px;
     margin: 25px;
     background-position: center;         
@@ -102,9 +103,7 @@ html {
     top: 20%;
 }
 .actor-div-comments {
-    position: absolute;
-    bottom: 5%;
-    right: 5%;
+    margin: auto;
     padding: 17px;
     width: 90%;
     border-radius: 20px;
@@ -117,6 +116,7 @@ html {
 }
 .actor-div-comments-div {
     margin-top: 45px;
+    z-index: 2;
 }
 .actor-div-comment-div {
     margin-top: 10px;
