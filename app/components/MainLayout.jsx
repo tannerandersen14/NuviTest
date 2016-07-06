@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, IndexLink, RouteHandler } from 'react-router';
 
+// Component that serves as the layout for the entire project. Contains the navbar and main div, which houses the {this.props.children} which works with react router to find what needs to be rendered depending on the URL.
 let MainLayout = React.createClass({
   render: function() {
     return (

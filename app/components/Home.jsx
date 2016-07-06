@@ -1,6 +1,6 @@
 import React from 'react';
 
-
+// Component that serves as the home screen (Landing page). Simple instructions on how to use project.
 let Home = React.createClass({
     render:function() {
         return (

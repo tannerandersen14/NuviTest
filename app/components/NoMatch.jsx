@@ -1,6 +1,7 @@
 import React from 'react';
 
-let Home = React.createClass({
+// Component that renders if the url selected is not found.
+let NoMatch = React.createClass({
     render:function() {
         return (
             <div className="no-match">
@@ -11,4 +12,4 @@ let Home = React.createClass({
     }
 })
 
-export default Home;
+export default NoMatch;
