@@ -35,7 +35,7 @@ let Providers = React.createClass({
       <div>
         <div className="provider-nav">
           <ul className="provider-nav-content">
-            <a href={'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(this.state.data.providerArray))} download="providerArray.json">Download JSON</a> // Uses html <a> tag and react variables to download current data that has been returned from the NUVI API.
+            <a href={'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(this.state.data.providerArray))} download="providerArray.json">Download JSON</a> {/* Uses html <a> tag and react variables to download current data that has been returned from the NUVI API. */}
             <br />
             <p>Click on providers to toggle their display.</p>
             {
