@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 // Sub component which maps through and renders the array of actors/activites returned from the API, sorting them by the company they were provided by.
 let Providers = React.createClass({
   // When user clicks on the name of the provider, all results from that provider are displayed inside the actor container. Toggled on and off.

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import axios from 'axios'; // Library being used to make the call to the NUVI API.
+import Axios from 'axios'; // Library being used to make the call to the NUVI API.
 import Providers from './subComponents/Providers.jsx'; // Import the Providers subcomponent to be rendered.
 
 
@@ -10,7 +10,7 @@ let Actors = React.createClass({
     getActors: function() {
         let providerCount = 0; // Declare new var named providerCount which will be used for the for in loop to ensure that each array is recreated correctly with a correct index number.
         let providers = []; // Declare new var named providers which will be used to sort all the information before setting the state to contain it.
-        axios.get('https://nuvi-challenge.herokuapp.com/activities')
+        Axios.get('https://nuvi-challenge.herokuapp.com/activities')
         .then(function(response) {
             this.setState({data: {actors: response.data, providerArray: []}});
             // For Loop to organize data into objects depending on who provided it.
