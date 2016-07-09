@@ -26,17 +26,17 @@ let Provider = React.createClass({
         <h1 className="page-header">Provider</h1>
         <p>{this.props.params.name}</p>
         <div className="actor-container">
-            {
-                this.state.data.providerData.map(function(actor) {
-                    return (
-                        <div style={{backgroundImage: 'url(' + actor.actor_avator + ')'}} className="actor-div" key={actor.id}>
-                            <p>{actor.actor_username}</p>
-                            <h3><a href={actor.actor_url}>{actor.actor_name}</a></h3>
-                            <h4>{actor.actor_description}</h4>
-                        </div>
-                    )
-                })
-            }  
+          {
+            this.state.data.providerData.map(function(actor) {
+              return (
+                <div style={{backgroundImage: 'url(' + actor.actor_avator + ')'}} className="actor-div" key={actor.id}>
+                  <p>{actor.actor_username}</p>
+                  <h3><a href={actor.actor_url}>{actor.actor_name}</a></h3>
+                  <h4>{actor.actor_description}</h4>
+                </div>
+              )
+            })
+          }  
         </div>
       </div>
     )

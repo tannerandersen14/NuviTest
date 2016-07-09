@@ -19,4 +19,4 @@ render((
         <Route path="*" component={ NoMatch }/>
       </Route>
     </Router>
-), document.getElementById('root'));
+), document.getElementById('root')); // Connects React to the index.html through a tag with an id of root.

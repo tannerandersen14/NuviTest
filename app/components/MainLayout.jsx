@@ -13,9 +13,7 @@ let MainLayout = React.createClass({
       type: 'GET',
       url: 'https://nuvi-challenge.herokuapp.com/activities',
       cache: false,
-      xhrFields: {
-        'SESSION': 'NUVI-12345'
-      },
+      crossDomain: true,
       success: function(data) {
         console.log('success', data);
         let document = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(data));

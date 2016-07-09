@@ -1,5 +1,7 @@
+/*Imports fonts from google fonts.*/
 @import url(https://fonts.googleapis.com/css?family=Open+Sans|Oswald);
 
+/*CSS for box-sizing, allows for more effective use of the 'padding' property.*/
 html {
   box-sizing: border-box;
 }
@@ -7,6 +9,7 @@ html {
   box-sizing: inherit;
 }
 
+/*CSS for background and overall page.*/
 .container-background {
     background: #757F9A; /* fallback for old browsers */
     background: -webkit-linear-gradient(to left, #757F9A , #D7DDE8); /* Chrome 10-25, Safari 5.1-6 */
@@ -20,6 +23,7 @@ html {
     padding-top: 40px;
 }
 
+/*CSS for the actors/activities section of the Actors page (right side).*/
 .actor-container {  
     font-family: 'Open Sans', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: black;
@@ -126,6 +130,7 @@ html {
     background-color: white;
 }
 
+/*CSS for the providers list in the Actors page.*/
 .provider-nav {
     font-family: 'Oswald', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     height: 100vh;
@@ -163,6 +168,7 @@ html {
     margin-bottom: 5px;    
 }
 
+/*Tiny bit of CSS so the download new doc button actually functions like a button aesthetically.*/
 #new-text-doc:hover {
     cursor: pointer;
 }
