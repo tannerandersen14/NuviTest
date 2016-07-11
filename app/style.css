@@ -23,7 +23,21 @@ html {
     padding-top: 40px;
 }
 
-/*CSS for the actors/activities section of the Actors page (right side).*/
+/*Small bit of CSS for Provider page so it looks nice.*/
+.provider-container {  
+    font-family: 'Open Sans', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    text-shadow: -.1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+    position: absolute;
+    left: 12%;
+    width: 95%;
+    padding: 15px;
+}
+.provider-title {
+    font-family: 'Oswald', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/*CSS for the actors/activities section of the Actors page (right side). (Also used for Provider page)*/
 .actor-container {  
     font-family: 'Open Sans', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: black;
