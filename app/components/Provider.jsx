@@ -40,88 +40,99 @@ let Provider = React.createClass({
       this.getProviderData();
   },
   render: function() {
-    return (
-      <div>
-        <h1 className="page-header text-center provider-title">{this.props.params.name.toUpperCase()}</h1>
-        <div className="provider-container">
-          {
-            this.state.data.providerData.map(function(actor) {
-              let commentCounter = 0; // Declaring a variable to act as a key for the comments of each div, so that comments can be dupes of eachother.
-                        // If user is not moused over the activity, comments are hidden.
-                        if (!actor.display) {
-                          return (
-                            <div onMouseEnter={() => { this.switchActorDisplay(actor) }} style={{backgroundImage: 'url(' + actor.actor_avator + ')'}} className="actor-div" key={actor.id}>
-                              <div className="actor-div-username">
-                                <h1>{actor.actor_username}</h1>
-                              </div>
-                              <div>
-                                <div className="actor-div-actor">
-                                  <h2>Actor</h2>
-                                  <h3><a href={actor.actor_url}>{actor.actor_name}</a></h3>
-                                  <h3>{actor.actor_description}</h3>                       
+    // Checks for data from provider, if it is there the UI will load, if it isn't the user will be notified.
+    if (this.state.data.providerData) {
+      return (
+        <div>
+          <h1 className="page-header text-center provider-title">{this.props.params.name.toUpperCase()}</h1>
+          <div className="provider-container">
+            {
+              this.state.data.providerData.map(function(actor) {
+                let commentCounter = 0; // Declaring a variable to act as a key for the comments of each div, so that comments can be dupes of eachother.
+                // If user is not moused over the activity, comments are hidden.
+                if (!actor.display) {
+                  return (
+                    <div onMouseEnter={() => { this.switchActorDisplay(actor) }} style={{backgroundImage: 'url(' + actor.actor_avator + ')'}} className="actor-div" key={actor.id}>
+                      <div className="actor-div-username">
+                        <h1>{actor.actor_username}</h1>
+                      </div>
+                      <div>
+                        <div className="actor-div-actor">
+                          <h2>Actor</h2>
+                          <h3><a href={actor.actor_url}>{actor.actor_name}</a></h3>
+                          <h3>{actor.actor_description}</h3>                       
+                        </div>
+                        <div className="actor-div-activities">
+                          <h2>Activity</h2>
+                          <h3>Date Posted: {actor.activity_date}</h3>
+                          <h3><a href={actor.activity_url}>{actor.provider}</a></h3>
+                          <h3>{actor.activity_comments} Comments</h3>
+                          <h3>{actor.activity_likes} Likes</h3>
+                          <h3>{actor.activity_shares} Shares</h3> 
+                        </div>
+                      </div>
+                    </div>      
+                  )
+                }
+                // If user is moused over the activity, display comments and the form to create comment.
+                else if (actor.display) {   
+                  return (
+                    <div onMouseLeave={() => { this.switchActorDisplay(actor) }} key={actor.id}>
+                      <div style={{backgroundImage: 'url(' + actor.actor_avator + ')'}} className="actor-div-extended" >
+                        <div className="actor-div-username">
+                          <h1>{actor.actor_username}</h1>
+                        </div>
+                        <div>
+                          <div className="actor-div-actor">
+                            <h2>Actor</h2>
+                            <h3><a href={actor.actor_url}>{actor.actor_name}</a></h3>
+                            <h3>{actor.actor_description}</h3>                       
+                          </div>
+                          <div className="actor-div-activities">
+                            <h2>Activity</h2>
+                            <h3>Date Posted: {actor.activity_date}</h3>
+                            <h3><a href={actor.activity_url}>{actor.provider}</a></h3>
+                            <h3>{actor.activity_comments} Comments</h3>
+                            <h3>{actor.activity_likes} Likes</h3>
+                            <h3>{actor.activity_shares} Shares</h3> 
+                          </div>
+                        </div>
+                      </div>
+                      <div className="actor-div-comments">
+                        <div className="form-group">
+                          <textarea placeholder="Comment here!"className="form-control" rows="4" onChange={this.handleCommentChange} value={this.state.comment}></textarea>
+                          <button onClick={() => { this.postComment(actor, this.state.comment) }} className="btn btn-primary actor-div-comment-button">Submit Comment</button>
+                        </div>
+                        <div className="actor-div-comments-div">
+                          {
+                            actor.comments.map(function(comment) {
+                              commentCounter += 1; // Incrementing commentCounter variable so that each comment key is different regardless of content.
+                              return (
+                                <div className="actor-div-comment-div" key={comment + commentCounter}>
+                                  <p>{comment}</p>
                                 </div>
-                                <div className="actor-div-activities">
-                                  <h2>Activity</h2>
-                                  <h3>Date Posted: {actor.activity_date}</h3>
-                                  <h3><a href={actor.activity_url}>{actor.provider}</a></h3>
-                                  <h3>{actor.activity_comments} Comments</h3>
-                                  <h3>{actor.activity_likes} Likes</h3>
-                                  <h3>{actor.activity_shares} Shares</h3> 
-                                </div>
-                              </div>
-                            </div>      
-                          )
-                        }
-                        // If user is moused over the activity, display comments and the form to create comment.
-                        else if (actor.display) {   
-                          return (
-                            <div onMouseLeave={() => { this.switchActorDisplay(actor) }} key={actor.id}>
-                              <div style={{backgroundImage: 'url(' + actor.actor_avator + ')'}} className="actor-div-extended" >
-                                <div className="actor-div-username">
-                                  <h1>{actor.actor_username}</h1>
-                                </div>
-                                <div>
-                                  <div className="actor-div-actor">
-                                    <h2>Actor</h2>
-                                    <h3><a href={actor.actor_url}>{actor.actor_name}</a></h3>
-                                    <h3>{actor.actor_description}</h3>                       
-                                  </div>
-                                  <div className="actor-div-activities">
-                                    <h2>Activity</h2>
-                                    <h3>Date Posted: {actor.activity_date}</h3>
-                                    <h3><a href={actor.activity_url}>{actor.provider}</a></h3>
-                                    <h3>{actor.activity_comments} Comments</h3>
-                                    <h3>{actor.activity_likes} Likes</h3>
-                                    <h3>{actor.activity_shares} Shares</h3> 
-                                  </div>
-                                </div>
-                              </div>
-                              <div className="actor-div-comments">
-                                <div className="form-group">
-                                  <textarea placeholder="Comment here!"className="form-control" rows="4" onChange={this.handleCommentChange} value={this.state.comment}></textarea>
-                                  <button onClick={() => { this.postComment(actor, this.state.comment) }} className="btn btn-primary actor-div-comment-button">Submit Comment</button>
-                                </div>
-                                <div className="actor-div-comments-div">
-                                  {
-                                    actor.comments.map(function(comment) {
-                                      commentCounter += 1; // Incrementing commentCounter variable so that each comment key is different regardless of content.
-                                      return (
-                                        <div className="actor-div-comment-div" key={comment + commentCounter}>
-                                          <p>{comment}</p>
-                                        </div>
-                                      )
-                                    }, this)
-                                  }
-                                </div>
-                              </div>
-                            </div>                                                            
-                          )                        
-                        }
-            }, this)
-          }  
+                              )
+                            }, this)
+                          }
+                        </div>
+                      </div>
+                    </div>                                                            
+                  )                        
+                }
+              }, this)
+            }  
+          </div>
         </div>
-      </div>
-    )
+      )
+    }
+    else {
+      return (
+        <div>
+          <h1 className="page-header">Provider Not Found</h1>
+          <h3>There is no data from that provider</h3>
+        </div>
+      )
+    }
   }
 });
 
