@@ -1,0 +1,188 @@
+/*Imports fonts from google fonts.*/
+@import url(https://fonts.googleapis.com/css?family=Open+Sans|Oswald);
+
+/*CSS for box-sizing, allows for more effective use of the 'padding' property.*/
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/*CSS for background and overall page.*/
+.container-background {
+    background: #757F9A; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #757F9A , #D7DDE8); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #757F9A , #D7DDE8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    min-height: 100vh;
+    min-width: 800px;   
+}
+.container-inherit {
+    background: white;
+    min-height: 100vh;
+    padding-top: 40px;
+}
+
+/*Small bit of CSS for Provider page so it looks nice.*/
+.provider-container {  
+    font-family: 'Open Sans', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    text-shadow: -.1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+    position: absolute;
+    left: 12%;
+    width: 95%;
+    padding: 15px;
+}
+.provider-title {
+    font-family: 'Oswald', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/*CSS for the actors/activities section of the Actors page (right side). (Also used for Provider page)*/
+.actor-container {  
+    font-family: 'Open Sans', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    text-shadow: -.1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+    position: absolute;
+    left: 20%;
+    width: 95%;
+    padding: 15px;
+}
+.actor-div {
+    position: relative;        
+    text-align: center;
+    width: 80%;
+    min-height: 400px;
+    margin-right: 10%; 
+    margin-bottom: 40px;
+    background-position: center;              
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    padding: 15px;
+}
+.actor-div:hover {
+    position: relative;    
+    text-align: center;
+    width: 80%;
+    min-height: 400px;
+    margin-right: 10%;
+    margin-bottom: 40px; 
+    background-position: center;         
+    background-repeat: no-repeat;
+    background-color: antiquewhite;
+    border-radius: 20px;
+    cursor: pointer; 
+    padding: 15px;    
+}
+.actor-div-extended {
+    position: relative;    
+    text-align: center;
+    width: 80%;
+    height: auto;
+    min-height: 600px;
+    margin-right: 10%;
+    background-position: center;         
+    margin-bottom: 40px;      
+    background-repeat: no-repeat;
+    border-radius: 20px;    
+    padding: 15px;    
+}
+.actor-div-extended:hover {
+    position: relative;
+    text-align: center;
+    width: 80%;
+    min-height: 600px;
+    margin-bottom: 40px;
+    margin-right: 10%;
+    background-position: center;     
+    background-repeat: no-repeat;
+    background-color: antiquewhite;    
+    border-radius: 20px;    
+    cursor: pointer;
+    padding: 15px;     
+}
+.actor-div-username {
+    position: absolute;
+    top: 5%;
+    padding: 10px;    
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+}
+.actor-div-actor {
+    text-align: center;
+    position: absolute;
+    top: 20%;
+    right: 15%;
+}
+.actor-div-activities {
+    text-align: center;
+    position: absolute;
+    left: 20%;
+    top: 20%;
+}
+.actor-div-comments {
+    position: relative;
+    margin-right: 10%;
+    padding: 17px;
+    width: 80%;
+    border-radius: 20px;
+    background-color: antiquewhite;
+}
+.actor-div-comment-button {
+    margin-top: 10px;
+    position: absolute;
+    left: 8.75%;
+}
+.actor-div-comments-div {
+    margin-top: 45px;
+    z-index: 2;
+}
+.actor-div-comment-div {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 25px;
+    background-color: white;
+}
+
+/*CSS for the providers list in the Actors page.*/
+.provider-nav {
+    font-family: 'Oswald', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    height: 100vh;
+    width: 20%;
+    background-color: #fff;
+    padding: 10px;
+    position: fixed;
+    left: 0;
+    border-right: darkgrey 1px solid;
+}
+.provider-nav-content {
+    padding-top: 2vh;
+    color: #00a5d9;
+}
+.provider-items {
+    color: #00a5d9;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+.provider-items:hover {
+    color: darkcyan;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-bottom: 5px;    
+}
+.provider-items-active {
+    color: black;
+    font-size: 1.2em;
+    margin-bottom: 5px;    
+}
+.provider-items-active:hover {
+    color: darkcyan;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-bottom: 5px;    
+}
+
+/*Tiny bit of CSS so the download new doc button actually functions like a button aesthetically.*/
+#new-text-doc:hover {
+    cursor: pointer;
+}
