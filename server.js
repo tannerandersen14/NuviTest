@@ -2,6 +2,7 @@
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
+const port = process.env.PORT || 21010;
 
 const app = express();
 app.use(cookieParser());
@@ -24,6 +25,6 @@ app.get('*', function (request, response){
 });
 
 // Server listens on port 21010 and logs it.
-app.listen(21010, function() {
-  console.log('listening on port', 21010);
+app.listen(port, function() {
+  console.log('listening on port', port);
 });
