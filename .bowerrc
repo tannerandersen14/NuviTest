@@ -1,4 +1,3 @@
-// Declares the directory for bower to put files upon installation.
 {
   "directory": "app/lib"
 }
