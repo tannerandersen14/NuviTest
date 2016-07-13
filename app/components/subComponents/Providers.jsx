@@ -3,10 +3,10 @@ import React from 'react';
 
 // Sub component which maps through and renders the array of actors/activites returned from the API, sorting them by the company they were provided by.
 let Providers = React.createClass({
-  // When user clicks on the name of the provider, all results from that provider are displayed inside the actor container. Toggled on and off.
+  // When user clicks on the name of the provider, all results from that provider are displayed inside the actor container. Toggled on and off. Also sets the display variable to true, turning off the placeholder text.
   switchProviderDisplay: function(provider) {
     provider.display = !provider.display;
-    this.setState({data: {providerArray: this.props.data.providerArray}});
+    this.setState({data: {providerArray: this.props.data.providerArray}, display: true});
   },
   // Function to be called by mouse over to switch between showing comments or not (uses the newly created display key to switch between render methods).
   switchActorDisplay: function(actor) {
@@ -28,7 +28,7 @@ let Providers = React.createClass({
   },
   // Declare initial state, before data is retrieved.
   getInitialState: function() {
-    return {data: {providerArray: []}, comment: ''};  
+    return {data: {providerArray: []}, comment: '', display: false};  
   },
   // Render to the DOM.
   render: function() {
@@ -65,6 +65,8 @@ let Providers = React.createClass({
         <div className="actor-container">
           { 
             this.state.data.providerArray.map(function(providerObject) {
+              // If a provider has been selected, load the data.
+              if (this.state.display) {
                 return (
                   <div key={providerObject.name}>
                     {
@@ -144,12 +146,21 @@ let Providers = React.createClass({
                     }
                   </div>
                 )
-              }, this)
-            }
-          </div>
+              }
+              // If no provider has been toggled since this page has loaded, load this placeholder text.
+              else {
+                return (
+                  <div key='1'>
+                    <h3>Please select what data you would like to view.</h3>
+                  </div>
+                )
+              }
+            }, this)
+          }
         </div>
-      )
-    }
+      </div>
+    )
+  }
 });
 
 export default Providers;

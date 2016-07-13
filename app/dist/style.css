@@ -17,15 +17,13 @@ body {
     width: 12px;
 }
  
-/* Track */
+/*CSS for all scrollbars in the app.*/
 ::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(120,120,255,0.6);
     box-shadow: inset 0 0 6px rgba(120,120,255,0.6);
     -webkit-border-radius: 10px;
     border-radius: 10px;
 }
- 
-/* Handle */
 ::-webkit-scrollbar-thumb {
     -webkit-border-radius: 10px;
     border-radius: 10px;
@@ -49,6 +47,22 @@ body {
     width: 90%;
     margin-right: 5%;
     margin-left: 5%;
+}
+
+/*CSS for the navbar, making it not seem so much like default bootstrap.*/
+.nav-styles {
+    background: black;
+    color: white;
+    font-family: 'Montserrat', serif;
+}
+.nav-styles-text {
+    color: white;
+}
+.nav-project-name {
+    font-family: 'Montserrat', serif;
+    color: #53C6DD;
+    font-size: 24px;
+    line-height: 12px;
 }
 
 /*Small bit of CSS for Provider page so it looks nice.*/
@@ -151,6 +165,7 @@ body {
     left: 20%;
     top: 20%;
 }
+/*CSS for the comment sections of the actor divs, the section that shows up upon hover.*/
 .actor-div-comments {
     position: relative;
     margin-right: 10%;
@@ -211,20 +226,7 @@ body {
     margin-bottom: 5px;    
 }
 
-.nav-styles {
-    background: black;
-    color: white;
-    font-family: 'Montserrat', serif;
-}
-.nav-styles-text {
-    color: white;
-}
-.nav-project-name {
-    font-family: 'Montserrat', serif;
-    color: #53C6DD;
-    font-size: 24px;
-    line-height: 12px;
-}
+
 /*Tiny bit of CSS so the download new doc button actually functions like a button aesthetically.*/
 #new-text-doc:hover {
     cursor: pointer;
