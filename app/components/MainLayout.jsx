@@ -35,18 +35,18 @@ let MainLayout = React.createClass({
     return (
       <div className="app">
         <header className="primary-header"></header>
-        <nav className="navbar navbar-default navbar-fixed-top">
+        <nav className="navbar navbar-inverse navbar-fixed-top nav-styles">
           <div className="navbar-header">
-              <a className="navbar-brand">NUVI Test</a>
+              <a className="navbar-brand" href="https://www.nuvi.com/"><h4 className="nav-project-name">NUVI</h4></a>
             </div>
           <div className="container"> 
             <ul className="nav navbar-nav">
-              <li><IndexLink to="/" activeClassName="active">Home</IndexLink></li>
-              <li><Link to="/actors" activeClassName="active">Actors</Link></li>
+              <li className="nav-styles-text"><IndexLink to="/" activeClassName="active">Home</IndexLink></li>
+              <li className="nav-styles-text"><Link to="/actors" activeClassName="active">Actors</Link></li>
             </ul>
             <ul className="nav navbar-nav navbar-right">
-              <li><a id="new-text-doc" onClick={() => { this.getTextDocument() }}>Get New Download Data</a></li>
-              <li><a id="text-document">Download</a></li>
+              <li className="nav-styles-text"><a id="new-text-doc" onClick={() => { this.getTextDocument() }}>Get New Download Data</a></li>
+              <li className="nav-styles-text"><a id="text-document">Download</a></li>
             </ul>
           </div>
         </nav>

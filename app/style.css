@@ -1,5 +1,5 @@
 /*Imports fonts from google fonts.*/
-@import url(https://fonts.googleapis.com/css?family=Open+Sans|Oswald);
+@import url(https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Oswald);
 
 /*CSS for box-sizing, allows for more effective use of the 'padding' property.*/
 html {
@@ -9,29 +9,59 @@ html {
   box-sizing: inherit;
 }
 
+body {
+    color: white;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(120,120,255,0.6);
+    box-shadow: inset 0 0 6px rgba(120,120,255,0.6);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(0,0,255,0.8); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,125,0.5);
+    box-shadow: inset 0 0 6px rgba(0,0,125,0.5);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(0,0,255,0.4); 
+}
+
 /*CSS for background and overall page.*/
 .container-background {
-    background: #757F9A; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #757F9A , #D7DDE8); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #757F9A , #D7DDE8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-image: url('https://www.nuvi.com/images/globe_night-bfb901bd.jpg');
     min-height: 100vh;
-    min-width: 800px;   
+    min-width: 800px;      
 }
 .container-inherit {
-    background: white;
     min-height: 100vh;
-    padding-top: 40px;
+    padding-top: 35px;
+    width: 90%;
+    margin-right: 5%;
+    margin-left: 5%;
 }
 
 /*Small bit of CSS for Provider page so it looks nice.*/
 .provider-container {  
     font-family: 'Open Sans', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: black;
-    text-shadow: -.1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+    color: white;
+    text-shadow: -.1px 0 black, 0 .1px black, .1px 0 black, 0 -.1px black;
     position: absolute;
-    left: 12%;
+    left: 3%;
     width: 95%;
-    padding: 15px;
+    padding: 45px;
+    max-height: 80vh;
+    overflow-y: auto;
 }
 .provider-title {
     font-family: 'Oswald', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -40,17 +70,20 @@ html {
 /*CSS for the actors/activities section of the Actors page (right side). (Also used for Provider page)*/
 .actor-container {  
     font-family: 'Open Sans', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: black;
-    text-shadow: -.1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+    color: white;
+    text-shadow: -.1px 0 black, 0 .1px black, .1px 0 black, 0 -.1px black;
     position: absolute;
-    left: 20%;
-    width: 95%;
-    padding: 15px;
+    left: 22.5%;
+    width: 75%;
+    padding: 45px;
+    height: 90vh;
+    overflow-y: auto;
+    border-radius: 5px;
 }
 .actor-div {
     position: relative;        
     text-align: center;
-    width: 80%;
+    width: 100%;
     min-height: 400px;
     margin-right: 10%; 
     margin-bottom: 40px;
@@ -62,13 +95,12 @@ html {
 .actor-div:hover {
     position: relative;    
     text-align: center;
-    width: 80%;
+    width: 100%;
     min-height: 400px;
     margin-right: 10%;
     margin-bottom: 40px; 
     background-position: center;         
     background-repeat: no-repeat;
-    background-color: antiquewhite;
     border-radius: 20px;
     cursor: pointer; 
     padding: 15px;    
@@ -76,7 +108,7 @@ html {
 .actor-div-extended {
     position: relative;    
     text-align: center;
-    width: 80%;
+    width: 100%;
     height: auto;
     min-height: 600px;
     margin-right: 10%;
@@ -84,21 +116,20 @@ html {
     margin-bottom: 40px;      
     background-repeat: no-repeat;
     border-radius: 20px;    
-    padding: 15px;    
+    padding: 15px;   
 }
 .actor-div-extended:hover {
     position: relative;
     text-align: center;
-    width: 80%;
+    width: 100%;
     min-height: 600px;
     margin-bottom: 40px;
     margin-right: 10%;
     background-position: center;     
-    background-repeat: no-repeat;
-    background-color: antiquewhite;    
+    background-repeat: no-repeat; 
     border-radius: 20px;    
     cursor: pointer;
-    padding: 15px;     
+    padding: 15px;  
 }
 .actor-div-username {
     position: absolute;
@@ -124,9 +155,8 @@ html {
     position: relative;
     margin-right: 10%;
     padding: 17px;
-    width: 80%;
+    width: 100%;
     border-radius: 20px;
-    background-color: antiquewhite;
 }
 .actor-div-comment-button {
     margin-top: 10px;
@@ -141,47 +171,60 @@ html {
     margin-top: 10px;
     padding: 10px;
     border-radius: 25px;
-    background-color: white;
 }
 
 /*CSS for the providers list in the Actors page.*/
 .provider-nav {
     font-family: 'Oswald', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    height: 100vh;
-    width: 20%;
-    background-color: #fff;
+    max-height: 95vh;
+    width: 15%;
+    background-color: black;
     padding: 10px;
-    position: fixed;
-    left: 0;
+    position: absolute;
+    left: 5%;
     border-right: darkgrey 1px solid;
 }
 .provider-nav-content {
     padding-top: 2vh;
-    color: #00a5d9;
+    color: white;
 }
 .provider-items {
-    color: #00a5d9;
+    color: white;
     font-size: 1.2em;
     margin-bottom: 5px;
 }
 .provider-items:hover {
-    color: darkcyan;
+    color: #53C6DD;
     font-size: 1.2em;
     cursor: pointer;
     margin-bottom: 5px;    
 }
 .provider-items-active {
-    color: black;
+    color: #53C6DD;
     font-size: 1.2em;
     margin-bottom: 5px;    
 }
 .provider-items-active:hover {
-    color: darkcyan;
+    color: white;
     font-size: 1.2em;
     cursor: pointer;
     margin-bottom: 5px;    
 }
 
+.nav-styles {
+    background: black;
+    color: white;
+    font-family: 'Montserrat', serif;
+}
+.nav-styles-text {
+    color: white;
+}
+.nav-project-name {
+    font-family: 'Montserrat', serif;
+    color: #53C6DD;
+    font-size: 24px;
+    line-height: 12px;
+}
 /*Tiny bit of CSS so the download new doc button actually functions like a button aesthetically.*/
 #new-text-doc:hover {
     cursor: pointer;
